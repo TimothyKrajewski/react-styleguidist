@@ -33,14 +33,13 @@ module.exports.pitch = function() {
 	fileExistsCaseInsensitive.clearCache();
 
 	const config = this._styleguidist;
-
-	let sections = getPages(config.sections, config);
+	let sections = getPages(config.pages, config);
 	if (config.skipComponentsWithoutExample) {
 		sections = filterComponentsWithExample(sections);
 	}
 
 	const allComponentFiles = getComponentFilesFromSections(
-		config.sections,
+		config.pages,
 		config.configDir,
 		config.ignore
 	);

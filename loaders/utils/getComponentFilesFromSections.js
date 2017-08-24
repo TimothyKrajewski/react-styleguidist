@@ -3,21 +3,21 @@
 const getComponentFiles = require('./getComponentFiles');
 
 /**
- * Return absolute paths of all components in sections.
+ * Return absolute paths of all components in pages.
  *
- * @param {Array} sections
+ * @param {Array} pages
  * @param {string} rootDir
  * @param {Array} [ignore] Glob patterns to ignore.
  * @returns {Array}
  */
-module.exports = function getComponentFilesFromSections(sections, rootDir, ignore) {
-	return sections.reduce((components, section) => {
-		if (section.components) {
-			return components.concat(getComponentFiles(section.components, rootDir, ignore));
+module.exports = function getComponentFilesFrompages(pages, rootDir, ignore) {
+	return pages.reduce((components, page) => {
+		if (page.components) {
+			return components.concat(getComponentFiles(page.components, rootDir, ignore));
 		}
 
-		if (section.sections) {
-			return components.concat(getComponentFilesFromSections(section.sections, rootDir, ignore));
+		if (page.pages) {
+			return components.concat(getComponentFilesFrompages(page.pages, rootDir, ignore));
 		}
 
 		return components;

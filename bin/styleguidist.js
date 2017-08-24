@@ -125,16 +125,16 @@ function commandServer() {
 		logger.info('Compiling…');
 	});
 
-	// Custom error reporting
-	compiler.plugin('done', function(stats) {
-		const messages = formatWebpackMessages(stats.toJson({}, true));
+	// // Custom error reporting
+	// compiler.plugin('done', function(stats) {
+	// 	const messages = formatWebpackMessages(stats.toJson({}, true));
 
-		if (!messages.errors.length && !messages.warnings.length) {
-			logger.info(chalk.green('Compiled successfully!'));
-		}
+	// 	if (!messages.errors.length && !messages.warnings.length) {
+	// 		logger.info(chalk.green('Compiled successfully!'));
+	// 	}
 
-		printAllErrorsAndWarnings(messages, stats.compilation);
-	});
+	// 	printAllErrorsAndWarnings(messages, stats.compilation);
+	// });
 }
 
 function commandHelp() {

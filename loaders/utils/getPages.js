@@ -11,27 +11,28 @@ const getComponents = require('./getComponents');
 const examplesLoader = path.resolve(__dirname, '../examples-loader.js');
 
 /**
- * Return object for one level of sections.
+ * Return object for one level of pages.
  *
- * @param {Array} sections
+ * @param {Array} pages
  * @param {object} config
  * @returns {Array}
  */
-function getSections(sections, config) {
-	return sections.map(section => processSection(section, config));
+function getSections(pages, config) {
+	return pages.map(page => processSection(page, config));
 }
 
 /**
- * Return an object for a given section with all components and subsections.
- * @param {object} section
+ * Return an object for a given page with all components and sections.
+ * @param {object} page
  * @param {object} config
  * @returns {object}
  */
-function processSection(section, config) {
-	// Try to load section content file
+function processSection(page, config) {
+	// Try to load page content file
 	let content;
-	if (section.content) {
-		const filepath = path.resolve(config.configDir, section.content);
+
+	if (page.content) {
+		const filepath = path.resolve(config.configDir, page.content);
 		if (!fs.existsSync(filepath)) {
 			throw new Error(`Styleguidist: Section content file not found: ${filepath}`);
 		}
@@ -39,12 +40,12 @@ function processSection(section, config) {
 	}
 
 	return {
-		name: section.name,
+		name: page.name,
 		components: getComponents(
-			getComponentFiles(section.components, config.configDir, config.ignore),
+			getComponentFiles(page.components, config.configDir, config.ignore),
 			config
 		),
-		sections: getSections(section.sections || [], config),
+		sections: getSections(page.sections || [], config),
 		content,
 	};
 }

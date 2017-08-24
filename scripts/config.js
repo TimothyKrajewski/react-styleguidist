@@ -32,7 +32,6 @@ function getConfig(config) {
 		// Try to read config options from a file
 		configFilepath = findConfigFile();
 	}
-
 	if (configFilepath) {
 		config = require(configFilepath);
 	}
@@ -56,7 +55,6 @@ function getConfig(config) {
 	const mergedConfig = merge({}, sanitizedConfig, {
 		configDir,
 	});
-
 	return mergedConfig;
 }
 
