@@ -109,28 +109,32 @@ module.exports = {
 		type: 'function',
 		default: reactDocgen.resolver.findAllExportedComponentDefinitions,
 	},
-	sections: {
+	pages: {
 		type: 'array',
 		default: [],
-		process: (val, config) => {
-			if (!val) {
-				// If root `components` isn't empty, make it a first section
-				// If `components` and `sections` weren’t specified, use default pattern
-				const components = config.components || DEFAULT_COMPONENTS_PATTERN;
-				return [{ components }];
-			}
-			return val;
+		sections: {
+			type: 'array',
+			default: [],
+			process: (val, config) => {
+				if (!val) {
+					// If root `components` isn't empty, make it a first section
+					// If `components` and `sections` weren’t specified, use default pattern
+					const components = config.components || DEFAULT_COMPONENTS_PATTERN;
+					return [{ components }];
+				}
+				return val;
+			},
+			example: [
+				{
+					name: 'Documentation',
+					content: 'Readme.md',
+				},
+				{
+					name: 'Components',
+					components: './lib/components/**/[A-Z]*.js',
+				},
+			],
 		},
-		example: [
-			{
-				name: 'Documentation',
-				content: 'Readme.md',
-			},
-			{
-				name: 'Components',
-				components: './lib/components/**/[A-Z]*.js',
-			},
-		],
 	},
 	serverHost: {
 		type: 'string',

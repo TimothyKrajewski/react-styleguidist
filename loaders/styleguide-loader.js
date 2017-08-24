@@ -9,8 +9,10 @@ const fileExistsCaseInsensitive = require('../scripts/utils/findFileCaseInsensit
 const getAllContentPages = require('./utils/getAllContentPages');
 const getComponentFilesFromSections = require('./utils/getComponentFilesFromSections');
 const getComponentPatternsFromSections = require('./utils/getComponentPatternsFromSections');
-const getSections = require('./utils/getSections');
+//const getSections = require('./utils/getSections');
 const filterComponentsWithExample = require('./utils/filterComponentsWithExample');
+
+const getPages = require('./utils/getPages');
 
 // Config options that should be passed to the client
 const CLIENT_CONFIG_OPTIONS = [
@@ -32,7 +34,7 @@ module.exports.pitch = function() {
 
 	const config = this._styleguidist;
 
-	let sections = getSections(config.sections, config);
+	let sections = getPages(config.sections, config);
 	if (config.skipComponentsWithoutExample) {
 		sections = filterComponentsWithExample(sections);
 	}

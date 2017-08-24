@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import isFinite from 'lodash/isFinite';
 import slots from 'rsg-components/slots';
 import StyleGuide from 'rsg-components/StyleGuide';
+import Pages from 'rsg-components/Pages';
 import {
 	getInfoFromHash,
 	filterComponentExamples,

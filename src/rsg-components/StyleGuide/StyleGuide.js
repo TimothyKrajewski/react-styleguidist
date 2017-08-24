@@ -44,7 +44,7 @@ export default class StyleGuide extends Component {
 	}
 
 	render() {
-		const { config, sections, welcomeScreen, patterns, isolatedComponent } = this.props;
+		const { config, sections, welcomeScreen, patterns, nav, isolatedComponent } = this.props;
 
 		if (welcomeScreen) {
 			return <Welcome patterns={patterns} />;
@@ -56,6 +56,8 @@ export default class StyleGuide extends Component {
 				homepageUrl={HOMEPAGE}
 				toc={<TableOfContents sections={sections} />}
 				hasSidebar={config.showSidebar && !isolatedComponent}
+				sidebar={(isEmpty(components) && (isEmpty(sections) || sections.length === 0)) ? false : sidebar}
+				nav={nav || false}
 			>
 				<Sections sections={sections} root />
 			</StyleGuideRenderer>

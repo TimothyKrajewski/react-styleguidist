@@ -54,9 +54,9 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 	},
 });
 
-export function StyleGuideRenderer({ classes, title, homepageUrl, children, toc, hasSidebar }) {
+export function StyleGuideRenderer({ classes, title, homepageUrl, children, toc, hasSidebar , nav}) {
 	return (
-		<div className={cx(classes.root, hasSidebar && classes.hasSidebar)}>
+		<div className={cx(classes.root, hasSidebar && classes.hasSidebar, nav && classes.hasNav)}>
 			<main className={classes.content}>
 				{children}
 				<footer className={classes.footer}>
@@ -83,6 +83,7 @@ StyleGuideRenderer.propTypes = {
 	children: PropTypes.node.isRequired,
 	toc: PropTypes.node.isRequired,
 	hasSidebar: PropTypes.bool,
+	nav: PropTypes.bool
 };
 
 export default Styled(styles)(StyleGuideRenderer);
