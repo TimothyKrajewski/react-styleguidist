@@ -26,6 +26,14 @@ export default class TableOfContents extends Component {
 	renderSections() {
 		const { searchTerm } = this.state;
 		const { sections } = this.props;
+		const hash = document.location.hash.replace('#', '');
+		//console.log(hash);
+		//in this map we get the sections of the page that we are on
+		// sections.map((hash) => {
+		// 	if (page.id === hash) {
+
+		// 	}
+		// })
 
 		// If there is only one section, we treat it as a root section
 		// In this case the name of the section won't be rendered and it won't get left padding

@@ -67,6 +67,12 @@ export function processComponents(components) {
  */
 export function processSections(sections) {
 	return sections.map(section => {
+		const hash = document.location.hash.replace('#', '');
+		console.log( section.slug )
+		if(section.slug == hash)
+			{
+				console.log("Great scot I've done it ! ")
+			}
 		section.components = processComponents(section.components || []);
 		section.sections = processSections(section.sections || []);
 		return section;
@@ -74,6 +80,7 @@ export function processSections(sections) {
 }
 
 export function processPages(pages) {
+
  	return pages.map(page => {
  		page.components = processComponents(page.components || []);
  		page.sections = processSections(page.sections || []);

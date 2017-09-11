@@ -14,6 +14,7 @@ import {
 	filterComponentsInSectionsByExactName,
 	findSection,
 	processSections,
+	processPages,
 	setSlugs,
 	slugger,
 } from './utils/utils';
@@ -26,7 +27,7 @@ function renderStyleguide() {
 	// eslint-disable-next-line import/no-unresolved
 	const styleguide = require('!!../loaders/styleguide-loader!./index.js');
 
-	let sections = processSections(styleguide.sections);
+	let sections = processPages(styleguide.sections);
 
 	// Parse URL hash to check if the components list must be filtered
 	const {
@@ -94,6 +95,15 @@ function renderStyleguide() {
 
 window.addEventListener('hashchange', renderStyleguide);
 
+window.addEventListener('hashchange', ()=>
+{
+	if(document.location.hash.substr(0,2) === '#!' )
+	{
+		renderStyleguide();
+	}
+
+}
+);
 /* istanbul ignore if */
 if (module.hot) {
 	module.hot.accept('!!../loaders/styleguide-loader!./index.js', () => {
