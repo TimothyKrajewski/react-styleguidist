@@ -95,15 +95,15 @@ function renderStyleguide() {
 
 window.addEventListener('hashchange', renderStyleguide);
 
-window.addEventListener('hashchange', ()=>
-{
-	if(document.location.hash.substr(0,2) === '#!' )
-	{
-		renderStyleguide();
-	}
+// window.addEventListener('hashchange', ()=>
+// {
+// 	if(document.location.hash.substr(0,2) === '#!' )
+// 	{
+// 		renderStyleguide();
+// 	}
 
-}
-);
+// }
+// );
 /* istanbul ignore if */
 if (module.hot) {
 	module.hot.accept('!!../loaders/styleguide-loader!./index.js', () => {

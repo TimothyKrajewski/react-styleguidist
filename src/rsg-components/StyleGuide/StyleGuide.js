@@ -49,6 +49,31 @@ export default class StyleGuide extends Component {
 		if (welcomeScreen) {
 			return <Welcome patterns={patterns} />;
 		}
+
+		
+		let sectionsToRender = sections.map((page) =>{
+			if(document.location.hash.substr(1, document.location.hash.length-1) === page.slug){
+				let arr = [page]
+				return sectionsToRender = <Sections sections={arr} root />;
+			}
+			else{
+				return null;
+			}
+		}) 
+
+		let allNull = true;
+		for(let i =0;  i < sectionsToRender.length; i++)
+		{
+			if(sectionsToRender[i] !== null)
+			{
+				allNull = false;
+			}
+		} 
+		if(allNull)
+		{
+			let arr = [sections[0]]
+			sectionsToRender = <Sections sections={arr} root />
+		} 
 		return (
 			<StyleGuideRenderer
 				title={config.title}
@@ -58,7 +83,7 @@ export default class StyleGuide extends Component {
 				//sidebar={(isEmpty(components) && (isEmpty(sections) || sections.length === 0)) ? false : sidebar}
 				nav={nav || false}
 			>
-				<Sections sections={sections} root />
+			{sectionsToRender}
 			</StyleGuideRenderer>
 		);
 	}

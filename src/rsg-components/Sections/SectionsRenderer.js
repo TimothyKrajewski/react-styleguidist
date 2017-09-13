@@ -8,11 +8,14 @@ const styles = () => ({
 });
 
 export function SectionsRenderer({ classes, children }) {
-	return (
-		<section className={classes.root}>
-			{children}
-		</section>
-	);
+	// if(document.location.hash.substr(1, document.location.hash.length-1) === slug)
+	// {
+		return (
+			<section className={classes.root}>
+				{children}
+			</section>
+		);
+	//} 
 }
 
 SectionsRenderer.propTypes = {

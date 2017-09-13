@@ -20,7 +20,6 @@ export default class TableOfContents extends Component {
 					heading: !!page.name && children.length > 0,
 					content: children.length > 0 && this.renderLevel(children),
 			});
-			console.log(retVal);
 			return retVal;
 		});
 		return <ComponentsList items={items} />;
