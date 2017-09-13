@@ -50,7 +50,7 @@ export default class StyleGuide extends Component {
 			return <Welcome patterns={patterns} />;
 		}
 
-		
+
 		let sectionsToRender = sections.map((page) =>{
 			if(document.location.hash.substr(1, document.location.hash.length-1) === page.slug){
 				let arr = [page]
@@ -74,6 +74,7 @@ export default class StyleGuide extends Component {
 			let arr = [sections[0]]
 			sectionsToRender = <Sections sections={arr} root />
 		} 
+
 		return (
 			<StyleGuideRenderer
 				title={config.title}

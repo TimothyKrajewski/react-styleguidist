@@ -21,7 +21,7 @@ module.exports = {
 			sections: [
 				{
 					name: 'Components',
-					//components: './lib/components/**/[A-Z]*.js',
+					components: './lib/components/**/[A-Z]*.js',
 				},
 				{
 					name: 'Documentation',
@@ -41,7 +41,8 @@ module.exports = {
 		{
 			id: 'exampleBut',
 			name: 'Button',
-			//components: './lib/components/Button/**/[A-Z]*.js',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			//content: dir + '/components/Button/Readme.md',
 		},
 	],
 	webpackConfig: {

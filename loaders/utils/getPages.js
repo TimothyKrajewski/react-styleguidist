@@ -18,7 +18,7 @@ const examplesLoader = path.resolve(__dirname, '../examples-loader.js');
  * @returns {Array}
  */
 function getSections(pages, config) {
-	return pages.map(page => processSection(page, config));
+	return pages.map(page => processSection(page.sections, config));
 }
 
 /**

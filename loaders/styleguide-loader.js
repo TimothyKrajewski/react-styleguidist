@@ -37,9 +37,10 @@ module.exports.pitch = function() {
 	if (config.skipComponentsWithoutExample) {
 		sections = filterComponentsWithExample(sections);
 	}
-
+	//console.log(config.pages[0].sections);
 	const allComponentFiles = getComponentFilesFromSections(
 		config.pages,
+		config.sections,
 		config.configDir,
 		config.ignore
 	);
