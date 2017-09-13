@@ -34,25 +34,31 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 });
 
 export function ComponentsListRenderer({ classes, items }) {
+	
 	items = items.filter(item => item.name);
-
+	
 	if (!items.length) {
 		return null;
 	}
-
+	
 	return (
 		<ul className={classes.list}>
-			{items.map(({ heading, name, slug, content }) =>
-				<li
-					className={cx(classes.item, (!content || !content.props.items.length) && classes.isChild)}
-					key={name}
-				>
-					<Link className={cx(heading && classes.heading)} href={`#${slug}`}>
-						{name}
-					</Link>
-					{content}
-				</li>
-			)}
+		{
+			items.map(item => {
+				return(
+					<li
+						className={cx(classes.item, (!item.content || !content.props.items.length) && classes.isChild)}
+						key={item.name}
+					>
+			
+						<Link className={cx(item.heading && classes.heading)} href={`#${item.slug}`}>
+							{item.name}
+						</Link>
+						{item.content}
+					</li>
+				)
+			})
+		}
 		</ul>
 	);
 }

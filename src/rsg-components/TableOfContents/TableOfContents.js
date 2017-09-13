@@ -12,13 +12,16 @@ export default class TableOfContents extends Component {
 		searchTerm: '',
 	};
 
-	renderLevel(sections) {
-		const items = sections.map(section => {
-			const children = [...(section.sections || []), ...(section.components || [])];
-			return Object.assign({}, section, {
-				heading: !!section.name && children.length > 0,
-				content: children.length > 0 && this.renderLevel(children),
+	renderLevel(pages) {
+		
+		const items = pages.map(page => {
+			const children = [...(page || []), ...(page.components || [])];
+				let retVal = Object.assign({}, page, {
+					heading: !!page.name && children.length > 0,
+					content: children.length > 0 && this.renderLevel(children),
 			});
+			console.log(retVal);
+			return retVal;
 		});
 		return <ComponentsList items={items} />;
 	}
@@ -27,7 +30,6 @@ export default class TableOfContents extends Component {
 		const { searchTerm } = this.state;
 		const { sections } = this.props;
 		const hash = document.location.hash.replace('#', '');
-		//console.log(hash);
 		//in this map we get the sections of the page that we are on
 		// sections.map((hash) => {
 		// 	if (page.id === hash) {

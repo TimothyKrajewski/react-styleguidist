@@ -49,7 +49,6 @@ export default class StyleGuide extends Component {
 		if (welcomeScreen) {
 			return <Welcome patterns={patterns} />;
 		}
-
 		return (
 			<StyleGuideRenderer
 				title={config.title}

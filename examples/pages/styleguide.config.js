@@ -7,7 +7,7 @@ module.exports = {
 	pages: [
 		{
 			id: 'readme',
-			title: 'Readme File',
+			name: 'Readme File',
 			sections: [
 				{
 					name: 'Read me',
@@ -17,7 +17,7 @@ module.exports = {
 		},
 		{
 			id: 'styleguide',
-			title: 'Styleguide',
+			name: 'Styleguide',
 			sections: [
 				{
 					name: 'Components',
@@ -40,7 +40,7 @@ module.exports = {
 		},
 		{
 			id: 'exampleBut',
-			title: 'Button',
+			name: 'Button',
 			//components: './lib/components/Button/**/[A-Z]*.js',
 		},
 	],
