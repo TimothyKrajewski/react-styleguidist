@@ -18,7 +18,32 @@ const examplesLoader = path.resolve(__dirname, '../examples-loader.js');
  * @returns {Array}
  */
 function getSections(pages, config) {
-	return pages.map(page => processSection(page.sections, config));
+	return pages.map(page => {
+		if (page.sections) {
+			return processSection(page, config);
+		}
+		return {};
+	});
+}
+
+function processNow(page, config) {
+	let content;
+	if (page.content) {
+		const filepath = path.resolve(config.configDir, page.content);
+		if (!fs.existsSync(filepath)) {
+			throw new Error(`Styleguidist: Section content file not found: ${filepath}`);
+		}
+		content = requireIt(`!!${examplesLoader}!${filepath}`);
+	}
+	const processedObject = {
+		name: page.name,
+		components: getComponents(
+			getComponentFiles(page.components, config.configDir, config.ignore),
+			config
+		),
+		content,
+	};
+	return processedObject;
 }
 
 /**
@@ -39,15 +64,17 @@ function processSection(page, config) {
 		content = requireIt(`!!${examplesLoader}!${filepath}`);
 	}
 
-	return {
+	const sanitized = {
 		name: page.name,
 		components: getComponents(
 			getComponentFiles(page.components, config.configDir, config.ignore),
 			config
 		),
-		sections: getSections(page.sections || [], config),
+		sections: page.sections.map(section => processNow(section || [], config)),
 		content,
 	};
+
+	return sanitized;
 }
 
 module.exports = getSections;

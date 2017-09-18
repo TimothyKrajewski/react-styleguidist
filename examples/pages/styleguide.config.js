@@ -25,16 +25,11 @@ module.exports = {
 				},
 				{
 					name: 'Documentation',
-					sections: [
-						{
-							name: 'Second File',
-							content: 'docs/Two.md',
-						},
-						{
-							name: 'First File',
-							content: 'docs/One.md',
-						},
-					],
+					content: 'docs/Two.md',
+				},
+				{
+					name: 'First File',
+					content: 'docs/One.md',
 				},
 			],
 		},
@@ -42,7 +37,13 @@ module.exports = {
 			id: 'exampleBut',
 			name: 'Button',
 			//components:  dir + '/components/Button/**/[A-Z]*.js',
-			//content: dir + '/components/Button/Readme.md',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
 		},
 	],
 	webpackConfig: {

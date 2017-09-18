@@ -24,6 +24,7 @@ import './styles';
 let codeRevision = 0;
 
 function renderStyleguide() {
+	
 	// eslint-disable-next-line import/no-unresolved
 	const styleguide = require('!!../loaders/styleguide-loader!./index.js');
 
