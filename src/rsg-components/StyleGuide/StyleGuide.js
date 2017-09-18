@@ -52,7 +52,7 @@ export default class StyleGuide extends Component {
 
 
 		let sectionsToRender = sections.map((page) =>{
-			console.log(page)
+			
 			if(document.location.hash.substr(1, document.location.hash.length-1) === page.slug){
 				let arr = [page]
 				return sectionsToRender = <Sections sections={arr} root />;

@@ -1,7 +1,6 @@
 const path = require('path');
 
-const dir = path.resolve(__dirname, 'lib');
-
+const dir = path.resolve(__dirname, 'src');
 module.exports = {
 	title: 'v1.0',
 	pages: [
@@ -21,7 +20,7 @@ module.exports = {
 			sections: [
 				{
 					name: 'Components',
-					components: './lib/components/**/[A-Z]*.js',
+					components: dir + '/components/**/[A-Z]*.js',
 				},
 				{
 					name: 'Documentation',
@@ -52,17 +51,12 @@ module.exports = {
 				{
 					test: /\.jsx?$/,
 					include: dir,
-					loader: 'babel',
+					loader: 'babel-loader',
 				},
 				{
 					test: /\.css$/,
 					include: dir,
-					loader: 'style!css?modules&importLoaders=1',
-				},
-				{
-					test: /\.json$/,
-					include: path.dirname(require.resolve('dog-names/package.json')),
-					loader: 'json',
+					loader: 'style-loader!css-loader?modules',
 				},
 			],
 		},
