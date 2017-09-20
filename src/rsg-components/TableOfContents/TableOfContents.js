@@ -13,11 +13,12 @@ export default class TableOfContents extends Component {
 	};
 
 	renderLevel(pages) {
-		
 		const items = pages.map(page => {
+			
 			const children = [...(page || []), ...(page.components || [])];
 				let retVal = Object.assign({}, page, {
 					heading: !!page.name && children.length > 0,
+					sections: page.sections , 
 					content: children.length > 0 && this.renderLevel(children),
 			});
 			return retVal;
@@ -28,14 +29,6 @@ export default class TableOfContents extends Component {
 	renderSections() {
 		const { searchTerm } = this.state;
 		const { sections } = this.props;
-		const hash = document.location.hash.replace('#', '');
-		//in this map we get the sections of the page that we are on
-		// sections.map((hash) => {
-		// 	if (page.id === hash) {
-
-		// 	}
-		// })
-
 		// If there is only one section, we treat it as a root section
 		// In this case the name of the section won't be rendered and it won't get left padding
 		const firstLevel = sections.length === 1 ? sections[0].components : sections;

@@ -19,6 +19,16 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 		overflow: 'hidden',
 		textOverflow: 'ellipsis',
 	},
+	section: {
+		color: color.base,
+		display: 'block',
+		margin: [[space[1], 0, space[1], space[2]]],
+		fontFamily: fontFamily.base,
+		fontSize: fontSize.base,
+		listStyle: 'none',
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+	},
 	isChild: {
 		[mq.small]: {
 			display: 'inline-block',
@@ -41,11 +51,24 @@ export function ComponentsListRenderer({ classes, items }) {
 		return null;
 	}
 	
-	return (
+	const menu =  (
 		<ul className={classes.list}>
 		{
 			items.map(item => {
-				return(
+					const subSections = item.sections.map(section =>{
+						const sectionList = (
+						<ul key={section.name} className={cx(classes.section, (!item.content || !content.props.items.length) && classes.isChild)} >
+							<li>
+								<Link className={cx(item.heading && classes.heading)} href={`#${item.slug}`}>
+									{section.name}
+								</Link>
+							</li>
+						</ul>
+						)
+						return sectionList;
+					})
+				
+				const listItem =  (
 					<li
 						className={cx(classes.item, (!item.content || !content.props.items.length) && classes.isChild)}
 						key={item.name}
@@ -55,12 +78,16 @@ export function ComponentsListRenderer({ classes, items }) {
 							{item.name}
 						</Link>
 						{item.content}
+						{subSections}
 					</li>
 				)
+
+				return listItem;
 			})
 		}
 		</ul>
 	);
+	return menu;
 }
 
 ComponentsListRenderer.propTypes = {

@@ -7,12 +7,7 @@ module.exports = {
 		{
 			id: 'readme',
 			name: 'Readme File',
-			sections: [
-				{
-					name: 'Read me',
-					content: 'docs/One.md',
-				},
-			],
+			sections: [],
 		},
 		{
 			id: 'styleguide',
