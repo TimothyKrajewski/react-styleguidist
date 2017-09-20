@@ -36,7 +36,6 @@ export function ReactComponentRenderer({
 	return (
 		<div className={classes.root} id={name + '-container'}>
 			<header className={classes.header}>
-				{heading}
 				{pathLine &&
 					<Pathline>
 						{pathLine}
