@@ -72,8 +72,6 @@ export function ComponentsListRenderer({ classes, items }) {
 						return sectionList;
 					})
 				} 
-				
-				console.log(items.content);
 				const listItem =  (
 					<li
 						className={cx(classes.item, (!item.content) && classes.isChild)}
