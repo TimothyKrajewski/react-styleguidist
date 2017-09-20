@@ -15,10 +15,9 @@ export default class TableOfContents extends Component {
 	renderLevel(pages) {
 		const items = pages.map(page => {
 			
-			const children = [...(page || []), ...(page.components || [])];
+			const children = [...(page || [])];
 				let retVal = Object.assign({}, page, {
-					heading: !!page.name && children.length > 0,
-					sections: page.sections , 
+					heading: !!page.name && children.length > 0, 
 					content: children.length > 0 && this.renderLevel(children),
 			});
 			return retVal;

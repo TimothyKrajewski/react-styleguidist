@@ -55,9 +55,13 @@ export function ComponentsListRenderer({ classes, items }) {
 		<ul className={classes.list}>
 		{
 			items.map(item => {
-					const subSections = item.sections.map(section =>{
+				let subSections = [];
+				if(item.sections)
+				{
+					subSections = item.sections.map(section =>{
+						console.log(section); 
 						const sectionList = (
-						<ul key={section.name} className={cx(classes.section, (!item.content || !content.props.items.length) && classes.isChild)} >
+						<ul key={section.name} className={cx(classes.section, (!item.content) && classes.isChild)} >
 							<li>
 								<Link className={cx(item.heading && classes.heading)} href={`#${item.slug}`}>
 									{section.name}
@@ -67,10 +71,12 @@ export function ComponentsListRenderer({ classes, items }) {
 						)
 						return sectionList;
 					})
+				} 
 				
+				console.log(items.content);
 				const listItem =  (
 					<li
-						className={cx(classes.item, (!item.content || !content.props.items.length) && classes.isChild)}
+						className={cx(classes.item, (!item.content) && classes.isChild)}
 						key={item.name}
 					>
 			
