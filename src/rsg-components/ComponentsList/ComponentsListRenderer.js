@@ -59,7 +59,6 @@ export function ComponentsListRenderer({ classes, items }) {
 				if(item.sections)
 				{
 					subSections = item.sections.map(section =>{
-						console.log(section); 
 						const sectionList = (
 						<ul key={section.name} className={cx(classes.section, (!item.content) && classes.isChild)} >
 							<li>
