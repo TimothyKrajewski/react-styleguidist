@@ -34,7 +34,6 @@ export function ReactComponentRenderer({
 	tabButtons,
 	tabBody,
 }) {
-	console.log(tabButtons.props.props.props.props)
 	return (
 		<div className={classes.root} id={name + '-container'}>
 			<header className={classes.header}>
