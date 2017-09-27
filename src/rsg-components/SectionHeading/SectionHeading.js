@@ -9,8 +9,7 @@ export default function SectionHeading({ slotName, slotProps, children, id, ...r
 	return (
 		<SectionHeadingRenderer
 			toolbar={<Slot name={slotName} props={slotProps} />}
-			id={id}
-			href={href}
+			id={id}	
 			{...rest}
 		>
 			{children}

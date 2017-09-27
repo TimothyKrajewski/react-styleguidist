@@ -80,7 +80,7 @@ export default class Playground extends Component {
 			<PlaygroundRenderer
 				name={name}
 				preview={preview}
-				previewProps={settings.props || {}}
+				previewProps= {settings.props || {}}
 				tabButtons={
 					<Slot
 						name="exampleTabButtons"

@@ -48,7 +48,6 @@ export default class ReactComponent extends Component {
 		if (!name) {
 			return null;
 		}
-
 		return (
 			<ReactComponentRenderer
 				name={name}

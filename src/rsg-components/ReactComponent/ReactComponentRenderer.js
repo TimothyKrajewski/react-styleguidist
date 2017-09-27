@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Pathline from 'rsg-components/Pathline';
 import Styled from 'rsg-components/Styled';
+import Props from 'rsg-components/Props';
 
 const styles = ({ color, fontSize, space }) => ({
 	root: {
@@ -33,6 +34,7 @@ export function ReactComponentRenderer({
 	tabButtons,
 	tabBody,
 }) {
+	console.log(tabButtons.props.props.props.props)
 	return (
 		<div className={classes.root} id={name + '-container'}>
 			<header className={classes.header}>
@@ -49,7 +51,7 @@ export function ReactComponentRenderer({
 			{tabButtons &&
 				<div className={classes.tabs}>
 					<div className={classes.tabButtons}>
-						{tabButtons}
+						{<Props props={tabButtons.props.props.props.props} />}
 					</div>
 					{tabBody}
 				</div>}

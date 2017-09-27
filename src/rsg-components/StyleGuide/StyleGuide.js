@@ -55,7 +55,7 @@ export default class StyleGuide extends Component {
 			
 			if(document.location.hash.substr(1, document.location.hash.length-1) === page.slug){
 				let arr = [page]
-				return sectionsToRender = <Sections sections={arr} root />;
+				return sectionsToRender = <Sections key={document.location.hash} sections={arr} root />;
 			}
 			else{
 				return null;
@@ -73,7 +73,7 @@ export default class StyleGuide extends Component {
 		if(allNull)
 		{
 			let arr = [sections[0]]
-			sectionsToRender = <Sections sections={arr} root />
+			sectionsToRender = <Sections key={document.location.hash} sections={arr} root />
 		} 
 
 		return (

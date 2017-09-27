@@ -13,7 +13,7 @@ module.exports = {
 			id: 'styleguide',
 			name: 'Styleguide',
 			components: dir + '/components/Modal/Modal.js',
-			content: dir + '/components/Modal/Readme.md',
+			//content: dir + '/components/Modal/Readme.md',
 			sections: [],
 			// sections: [
 			// 	{
