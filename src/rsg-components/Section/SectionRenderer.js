@@ -6,6 +6,7 @@ import SectionHeading from 'rsg-components/SectionHeading';
 const styles = ({ space }) => ({
 	root: {
 		marginBottom: space[4],
+		marginTop: '75px',
 	},
 });
 
@@ -22,7 +23,7 @@ export function SectionRenderer(allProps) {
 				{sections}
 			</section>
 		);
-	
+
 }
 
 SectionRenderer.propTypes = {

@@ -5,24 +5,31 @@ import Styled from 'rsg-components/Styled';
 
 export const styles = ({ color }) => ({
 	link: {
-		'&, &:link, &:visited': {
+		'&, &:link,  &:visited': {
 			fontSize: 'inherit',
-			color: color.link,
+			color: 'black',
 			textDecoration: 'none',
+			fontFamily: 'SourceSansPro',
+			fontSize:'15px',
 		},
-		'&:hover, &:active': {
+		'&:hover &:active': {
 			isolate: false,
-			color: color.linkHover,
+			color: 'black',
 			cursor: 'pointer',
 		},
 	},
+	onNow: {
+		fontWeight: '900!important'
+	},
+
 });
 
 export function LinkRenderer({ classes, children, ...props }) {
+	const location = window.location.href.split('#')[1];
+	const slug = props.href.split('#')[1];
+	const retVal = <a {...props} className={cx(slug === location? props.section? classes.onNow: "" : classes.link ,  classes.link , props.className)}> {children} </a>
 	return (
-		<a {...props} className={cx(classes.link, props.className)}>
-			{children}
-		</a>
+		retVal
 	);
 }
 

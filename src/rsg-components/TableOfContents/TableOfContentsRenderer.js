@@ -13,6 +13,7 @@ const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 		display: 'block',
 		width: '100%',
 		padding: space[1],
+		marginTop: space[2],
 		color: color.base,
 		backgroundColor: color.baseBackground,
 		fontFamily: fontFamily.base,

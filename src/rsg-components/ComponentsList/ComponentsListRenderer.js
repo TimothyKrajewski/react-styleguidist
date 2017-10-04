@@ -41,16 +41,19 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 		fontFamily: fontFamily.base,
 		fontWeight: 'bold',
 	},
+	onNowSection: {
+		fontWeight: '500!important '
+	},
 });
 
 export function ComponentsListRenderer({ classes, items }) {
-	
+
 	items = items.filter(item => item.name);
-	
+
 	if (!items.length) {
 		return null;
 	}
-	
+
 	const menu =  (
 		<ul className={classes.list}>
 		{
@@ -62,7 +65,7 @@ export function ComponentsListRenderer({ classes, items }) {
 						const sectionList = (
 						<ul key={section.name} className={cx(classes.section, (!item.content) && classes.isChild)} >
 							<li>
-								<Link className={cx(item.heading && classes.heading)} href={`#${item.slug}`}>
+								<Link className={cx(item.slug === location? item.heading && classes.heading : item.heading && classes.heading && classes.onNow)} href={`#${item.slug}`}>
 									{section.name}
 								</Link>
 							</li>
@@ -70,14 +73,14 @@ export function ComponentsListRenderer({ classes, items }) {
 						)
 						return sectionList;
 					})
-				} 
+				}
 				const listItem =  (
 					<li
 						className={cx(classes.item, (!item.content) && classes.isChild)}
 						key={item.name}
 					>
-			
-						<Link className={cx(item.heading && classes.heading)} href={`#${item.slug}`}>
+
+						<Link className={cx(classes.onNowSection)} href={`#${item.slug}`} section={true}>
 							{item.name}
 						</Link>
 						{item.content}
