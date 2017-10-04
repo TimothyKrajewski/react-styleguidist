@@ -79,63 +79,6 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 		marginLeft: '-10px',
 		textRendering: 'optimizeLegibility',
 	},
-	platformWeb : {
-		height: '74px',
-		width: '167px',
-		position: 'absolute',
-		top:'0px',
-		right: '248px',
-		textAlign: 'center',
-		'&:hover': {
-			backgroundColor: '#b81229',
-			height: '74px',
-			width: '167px',
-			position: 'absolute',
-			top:'0px',
-			right: '248px',
-			textAlign: 'center',
-		},
-	},
-
-	platformiOS: {
-		height: '74px',
-		width: '100px',
-		position: 'absolute',
-		top: '0px',
-		right: '148px',
-		textAlign: 'center',
-		'&:hover': {
-			backgroundColor: '#b81229',
-			height: '74px',
-			width: '100px',
-			position: 'absolute',
-			top: '0px',
-			right: '148px',
-		},
-	},
-	platformAndroid : {
-		position: 'absolute',
-		top: '0px',
-		height: '74px',
-		width: '148px',
-		right: '0px',
-		textAlign: 'center',
-		'&:hover': {
-			backgroundColor: '#b81229',
-			top: '0px',
-			height: '74px',
-			width: '148px',
-			right: '0px',
-			position: 'absolute',
-		},
-	},
-	platformText :{
-		textAlign: 'center',
-		fontFamily: 'SourceSansPro',
-		fontSize: '18px',
-		marginTop:'26px',
-		color: '#ffffff',
-	},
 });
 
 export function StyleGuideRenderer({ classes, title, homepageUrl, children, toc, hasSidebar, nav }) {
@@ -144,10 +87,6 @@ export function StyleGuideRenderer({ classes, title, homepageUrl, children, toc,
 			<div className={classes.header}>
 				<img className={classes.icimsLogo} src="https://icimsinc.sharepoint.com/sites/DAM/DAM%20Assets/iCIMS%20Logo%20White%20-%20Transparent%20Background.png" />
 				<p className={classes.headerText}>Styleguide</p>
-
-				<div className={classes.platformWeb} > <p className={classes.platformText}>Responsive Web </p></div>
-				<div className={classes.platformiOS}> <p className={classes.platformText}>iOS </p></div>
-				<div className={classes.platformAndroid}> <p className={classes.platformText}>Android</p></div>
 			</div>
 			<div className={cx(classes.root, hasSidebar && classes.hasSidebar, nav && classes.hasNav)}>
 				<main className={classes.content}>
