@@ -8,7 +8,7 @@ const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 	},
 	search: {
 		padding: space[2],
-		marginTop: space[2],
+		marginTop: "32px",
 	},
 	input: {
 		display: 'block',
