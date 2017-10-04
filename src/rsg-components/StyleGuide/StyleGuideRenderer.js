@@ -42,10 +42,6 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 			paddingBottom: space[0],
 		},
 	},
-	logo: {
-		padding: space[2],
-		borderBottom: [[1, color.border, 'solid']],
-	},
 	footer: {
 		display: 'block',
 		color: color.light,
