@@ -51,7 +51,7 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 	header : {
 		width:"100%",
 		height:"74px",
-		backgroundColor: "#d7233e",
+		backgroundColor: "#cf0a2c",
 		position: "fixed",
 		zIndex:"1",
 		top: "0px",
