@@ -33,12 +33,23 @@ const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 			color: color.light,
 		},
 	},
+	title : {
+		width: '35px',
+		height: '13px',
+		fontFamily: 'SourceSansPro',
+		fontSize: '13px',
+		lineHeight: '1',
+		textAlign: 'left',
+		color: '#333333',
+	}
 });
 
-export function TableOfContentsRenderer({ classes, children, searchTerm, onSearchTermChange }) {
+export function TableOfContentsRenderer({ classes, children, searchTerm, onSearchTermChange, title }) {
+
 	return (
 		<div>
 			<div className={classes.root}>
+				<p className={classes.title}> {title} </p>
 				<div className={classes.search}>
 					<input
 						value={searchTerm}
@@ -58,6 +69,7 @@ TableOfContentsRenderer.propTypes = {
 	children: PropTypes.node,
 	searchTerm: PropTypes.string.isRequired,
 	onSearchTermChange: PropTypes.func.isRequired,
+	title: PropTypes.string,
 };
 
 export default Styled(styles)(TableOfContentsRenderer);

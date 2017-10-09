@@ -45,14 +45,13 @@ export default class StyleGuide extends Component {
 
 	render() {
 		const { config, sections, welcomeScreen, patterns, nav, isolatedComponent } = this.props;
-		
+
 		if (welcomeScreen) {
 			return <Welcome patterns={patterns} />;
 		}
 
-
 		let sectionsToRender = sections.map((page) =>{
-			
+
 			if(document.location.hash.substr(1, document.location.hash.length-1) === page.slug){
 				let arr = [page]
 				return sectionsToRender = <Sections key={document.location.hash} sections={arr} root />;
@@ -60,7 +59,7 @@ export default class StyleGuide extends Component {
 			else{
 				return null;
 			}
-		}) 
+		})
 
 		let allNull = true;
 		for(let i =0;  i < sectionsToRender.length; i++)
@@ -69,18 +68,18 @@ export default class StyleGuide extends Component {
 			{
 				allNull = false;
 			}
-		} 
+		}
 		if(allNull)
 		{
 			let arr = [sections[0]]
 			sectionsToRender = <Sections key={document.location.hash} sections={arr} root />
-		} 
+		}
 
 		return (
 			<StyleGuideRenderer
 				title={config.title}
 				homepageUrl={HOMEPAGE}
-				toc={<TableOfContents sections={sections} />}
+				toc={<TableOfContents sections={sections} title={config.title}/>}
 				hasSidebar={config.showSidebar && !isolatedComponent}
 				//sidebar={(isEmpty(components) && (isEmpty(sections) || sections.length === 0)) ? false : sidebar}
 				nav={nav || false}

@@ -14,10 +14,10 @@ export default class TableOfContents extends Component {
 
 	renderLevel(pages) {
 		const items = pages.map(page => {
-			
+
 			const children = [...(page || [])];
 				let retVal = Object.assign({}, page, {
-					heading: !!page.name && children.length > 0, 
+					heading: !!page.name && children.length > 0,
 					content: children.length > 0 && this.renderLevel(children),
 			});
 			return retVal;
@@ -37,11 +37,13 @@ export default class TableOfContents extends Component {
 	}
 
 	render() {
+		const { title } = this.props;
 		const { searchTerm } = this.state;
 		return (
 			<TableOfContentsRenderer
 				searchTerm={searchTerm}
 				onSearchTermChange={searchTerm => this.setState({ searchTerm })}
+				title = {title}
 			>
 				{this.renderSections()}
 			</TableOfContentsRenderer>

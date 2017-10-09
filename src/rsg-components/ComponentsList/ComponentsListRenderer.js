@@ -44,6 +44,13 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	onNowSection: {
 		fontWeight: '500!important '
 	},
+	// itemHover:{
+	// 	'&:hover' : {
+	// 		width: 'inherit',
+	// 		height: '34px',
+	// 		backgroundColor:'#f6f6f6'
+	// 	}
+	// }
 });
 
 export function ComponentsListRenderer({ classes, items }) {
