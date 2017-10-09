@@ -8,7 +8,6 @@ const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 	},
 	search: {
 		padding: space[2],
-		marginTop: "32px",
 	},
 	input: {
 		display: 'block',
@@ -34,7 +33,7 @@ const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 		},
 	},
 	title : {
-		width: '35px',
+		margin: '40px 0px 15px 23px',
 		height: '13px',
 		fontFamily: 'SourceSansPro',
 		fontSize: '13px',
