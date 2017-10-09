@@ -7,7 +7,9 @@ const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 		fontFamily: fontFamily.base,
 	},
 	search: {
-		padding: space[2],
+		paddingLeft: space[2],
+		paddingRight: space[2],
+		paddingBottom: space[2],
 	},
 	input: {
 		display: 'block',
