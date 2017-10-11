@@ -33,9 +33,12 @@ const styles = ({ space, color, fontFamily, fontSize, borderRadius }) => ({
 			fontSize: fontSize.base,
 			color: color.light,
 		},
+		'&:after' : {
+			content:'url("search.svg")',
+		}
 	},
 	title : {
-		margin: '40px 0px 15px 23px',
+		margin: '63px 0px 15px 23px',
 		height: '13px',
 		fontFamily: 'SourceSansPro',
 		fontSize: '13px',
