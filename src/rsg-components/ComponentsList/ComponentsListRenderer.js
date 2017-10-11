@@ -7,12 +7,12 @@ import Styled from 'rsg-components/Styled';
 const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	list: {
 		margin: 0,
-		paddingLeft: space[2],
+		//paddingLeft: space[2],
 	},
 	item: {
 		color: color.base,
 		display: 'block',
-		margin: [[space[1], 0, space[1], 0]],
+		padding:'5px 0px 5px 16px',
 		fontFamily: fontFamily.base,
 		fontSize: fontSize.base,
 		listStyle: 'none',
@@ -44,13 +44,20 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	onNowSection: {
 		fontWeight: '500!important '
 	},
-	// itemHover:{
-	// 	'&:hover' : {
-	// 		width: 'inherit',
-	// 		height: '34px',
-	// 		backgroundColor:'#f6f6f6'
-	// 	}
-	// }
+	itemHover:{
+		'&:hover' : {
+			color: color.base,
+			display: 'block',
+			padding:'5px 0px 5px 16px',
+			fontFamily: fontFamily.base,
+			fontSize: fontSize.base,
+			listStyle: 'none',
+			overflow: 'hidden',
+			textOverflow: 'ellipsis',
+			paddingLeft: '-100px',
+			backgroundColor:'#e2e2e2'
+		}
+	}
 });
 
 export function ComponentsListRenderer({ classes, items }) {
@@ -83,11 +90,11 @@ export function ComponentsListRenderer({ classes, items }) {
 				}
 				const listItem =  (
 					<li
-						className={cx(classes.item, (!item.content) && classes.isChild)}
+						className={cx(classes.item , classes.itemHover , (!item.content) && classes.isChild)}
 						key={item.name}
 					>
 
-						<Link className={cx(classes.onNowSection)} href={`#${item.slug}`} section={true}>
+						<Link className={ cx(classes.onNowSection)} href={`#${item.slug}`} section={true}>
 							{item.name}
 						</Link>
 						{item.content}
