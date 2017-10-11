@@ -12,7 +12,7 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	item: {
 		color: color.base,
 		display: 'block',
-		padding:'5px 0px 5px 16px',
+		//padding:'5px 0px 5px 16px',
 		fontFamily: fontFamily.base,
 		fontSize: fontSize.base,
 		listStyle: 'none',
@@ -22,7 +22,7 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	section: {
 		color: color.base,
 		display: 'block',
-		margin: [[space[1], 0, space[1], space[2]]],
+		padding: [[0, 0, 0, space[2]]],
 		fontFamily: fontFamily.base,
 		fontSize: fontSize.base,
 		listStyle: 'none',
@@ -44,20 +44,7 @@ const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	onNowSection: {
 		fontWeight: '500!important '
 	},
-	itemHover:{
-		'&:hover' : {
-			color: color.base,
-			display: 'block',
-			padding:'5px 0px 5px 16px',
-			fontFamily: fontFamily.base,
-			fontSize: fontSize.base,
-			listStyle: 'none',
-			overflow: 'hidden',
-			textOverflow: 'ellipsis',
-			paddingLeft: '-100px',
-			backgroundColor:'#e2e2e2'
-		}
-	}
+
 });
 
 export function ComponentsListRenderer({ classes, items }) {
@@ -90,7 +77,7 @@ export function ComponentsListRenderer({ classes, items }) {
 				}
 				const listItem =  (
 					<li
-						className={cx(classes.item , classes.itemHover , (!item.content) && classes.isChild)}
+						className={cx(classes.item , (!item.content) && classes.isChild)}
 						key={item.name}
 					>
 
