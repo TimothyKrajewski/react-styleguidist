@@ -53,7 +53,7 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 		height:"74px",
 		backgroundColor: "#cf0a2c",
 		position: "fixed",
-		zIndex:"1",
+		zIndex:"3",
 		top: "0px",
 	},
 	icimsLogo : {

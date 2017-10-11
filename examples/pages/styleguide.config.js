@@ -14,21 +14,21 @@ module.exports = {
 			name: 'Styleguide',
 			components: dir + '/components/Modal/Modal.js',
 			//content: dir + '/components/Modal/Readme.md',
-			sections: [],
-			// sections: [
-			// 	{
-			// 		name: 'Components',
-			// 		components: dir + '/components/**/[A-Z]*.js',
-			// 	},
-			// 	{
-			// 		name: 'Documentation',
-			// 		content: 'docs/Two.md',
-			// 	},
-			// 	{
-			// 		name: 'First File',
-			// 		content: 'docs/One.md',
-			// 	},
-			// ],
+			//sections: [],
+			sections: [
+				{
+					name: 'Components',
+					components: dir + '/components/**/[A-Z]*.js',
+				},
+				{
+					name: 'Documentation',
+					content: 'docs/Two.md',
+				},
+				{
+					name: 'First File',
+					content: 'docs/One.md',
+				},
+			],
 		},
 		{
 			id: 'exampleBut',
