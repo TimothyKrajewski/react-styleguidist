@@ -59,22 +59,6 @@ module.exports = function(config, env) {
 				chunkFilename: 'build/[name].[chunkhash:8].js',
 			},
 			plugins: [
-				new UglifyJSPlugin({
-					parallel: {
-						cache: true,
-					},
-					uglifyOptions: {
-						ie8: false,
-						ecma: 5,
-						compress: {
-							keep_fnames: true,
-							warnings: false,
-						},
-						mangle: {
-							keep_fnames: true,
-						},
-					},
-				}),
 				new CleanWebpackPlugin(['build'], {
 					root: config.styleguideDir,
 					verbose: config.verbose,

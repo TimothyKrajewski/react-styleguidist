@@ -49,6 +49,7 @@ export function LinkRenderer({ classes, children, ...props }) {
 LinkRenderer.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
+	section: PropTypes.bool,
 	classes: PropTypes.object.isRequired,
 };
 
