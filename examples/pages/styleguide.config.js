@@ -42,6 +42,138 @@ module.exports = {
 			],
 			content: dir + '/components/Button/Readme.md',
 		},
+		{
+			id: 'exampleBut',
+			name: 'Button1',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button2',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button3',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button4',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button5',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button6',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button6',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button7',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button8',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button9',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
+		{
+			id: 'exampleBut',
+			name: 'Button10',
+			//components:  dir + '/components/Button/**/[A-Z]*.js',
+			sections: [
+				{
+					name: 'Second File',
+					content: 'docs/Two.md',
+				},
+			],
+			content: dir + '/components/Button/Readme.md',
+		},
 	],
 	webpackConfig: {
 		module: {
