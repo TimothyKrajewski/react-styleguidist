@@ -62,6 +62,12 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 		objectFit: 'contain',
 		margin: '14px 24px 14px 24px',
 	},
+	filler : {
+		width: '70px',
+		height: '46px',
+		display: 'inline',
+		margin: '14px 24px 14px 24px',
+	},
 	headerText : {
 		fontFamily: "SourceSansPro",
 		fontSize: '21px',
@@ -78,11 +84,16 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 });
 
 export function StyleGuideRenderer({ classes, title, homepageUrl, children, toc, hasSidebar, nav, logo }) {
-	console.log('here');
+	//console.log(logo);
+	let imgElement = <div className={classes.filler}></div>;
+	if(logo)
+	{
+		imgElement = <img className={classes.icimsLogo} src={logo} />
+	}
 	return (
 		<div>
 			<div className={classes.header}>
-				<img className={classes.icimsLogo} src={logo} />
+				{imgElement}
 				<p className={classes.headerText}>Styleguide</p>
 			</div>
 			<div className={cx(classes.root, hasSidebar && classes.hasSidebar, nav && classes.hasNav)}>

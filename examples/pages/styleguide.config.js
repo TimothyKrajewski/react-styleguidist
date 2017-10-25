@@ -3,7 +3,7 @@ const path = require('path');
 const dir = path.resolve(__dirname, 'src');
 module.exports = {
 	title: 'v1.0',
-	logo: './iCIMSLogo.png',
+	logoPath: './iCIMSLogo.png',
 	pages: [
 		{
 			id: 'readme',

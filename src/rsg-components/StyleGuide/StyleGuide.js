@@ -44,6 +44,7 @@ export default class StyleGuide extends Component {
 	}
 
 	render() {
+		//console.log(this.props.config);
 		const { config, sections, welcomeScreen, patterns, nav, isolatedComponent } = this.props;
 
 		if (welcomeScreen) {
@@ -74,6 +75,10 @@ export default class StyleGuide extends Component {
 			let arr = [sections[0]]
 			sectionsToRender = <Sections key={document.location.hash} sections={arr} root />
 		}
+		if(config.logoPath === undefined)
+		{
+			config.logoPath = false;
+		}
 		return (
 			<StyleGuideRenderer
 				title={config.title}
@@ -82,7 +87,7 @@ export default class StyleGuide extends Component {
 				hasSidebar={config.showSidebar && !isolatedComponent}
 				//sidebar={(isEmpty(components) && (isEmpty(sections) || sections.length === 0)) ? false : sidebar}
 				nav={nav || false}
-				logo={config.logo}
+				logo={config.logoPath}
 			>
 			{sectionsToRender}
 			</StyleGuideRenderer>

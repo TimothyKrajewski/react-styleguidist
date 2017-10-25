@@ -24,7 +24,7 @@ import './styles';
 let codeRevision = 0;
 
 function renderStyleguide() {
-	
+
 	// eslint-disable-next-line import/no-unresolved
 	const styleguide = require('!!../loaders/styleguide-loader!./index.js');
 
@@ -77,7 +77,7 @@ function renderStyleguide() {
 		documentTitle = sections[0].name + ' — ' + documentTitle;
 	}
 	document.title = documentTitle;
-
+	//console.log(styleguide.config);
 	ReactDOM.render(
 		<StyleGuide
 			codeRevision={codeRevision}

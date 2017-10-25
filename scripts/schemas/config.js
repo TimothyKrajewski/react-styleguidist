@@ -202,16 +202,8 @@ module.exports = {
 		},
 		example: 'My Style Guide',
 	},
-	logo: {
+	logoPath: {
 		type: 'string',
-		process: val => {
-			if (val) {
-				return val;
-			}
-			const name = getUserPackageJson().name;
-			return `${startCase(name)} Style Guide`;
-		},
-		example: './MyStyleGuide.png',
 	},
 	updateExample: {
 		type: 'function',
