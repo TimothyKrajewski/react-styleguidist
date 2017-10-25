@@ -74,7 +74,6 @@ export default class StyleGuide extends Component {
 			let arr = [sections[0]]
 			sectionsToRender = <Sections key={document.location.hash} sections={arr} root />
 		}
-
 		return (
 			<StyleGuideRenderer
 				title={config.title}
@@ -83,6 +82,7 @@ export default class StyleGuide extends Component {
 				hasSidebar={config.showSidebar && !isolatedComponent}
 				//sidebar={(isEmpty(components) && (isEmpty(sections) || sections.length === 0)) ? false : sidebar}
 				nav={nav || false}
+				logo={config.logo}
 			>
 			{sectionsToRender}
 			</StyleGuideRenderer>

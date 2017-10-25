@@ -77,11 +77,12 @@ const styles = ({ color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth
 	},
 });
 
-export function StyleGuideRenderer({ classes, title, homepageUrl, children, toc, hasSidebar, nav }) {
+export function StyleGuideRenderer({ classes, title, homepageUrl, children, toc, hasSidebar, nav, logo }) {
+	console.log('here');
 	return (
 		<div>
 			<div className={classes.header}>
-				<img className={classes.icimsLogo} src="https://icimsinc.sharepoint.com/sites/DAM/DAM%20Assets/iCIMS%20Logo%20White%20-%20Transparent%20Background.png" />
+				<img className={classes.icimsLogo} src={logo} />
 				<p className={classes.headerText}>Styleguide</p>
 			</div>
 			<div className={cx(classes.root, hasSidebar && classes.hasSidebar, nav && classes.hasNav)}>
