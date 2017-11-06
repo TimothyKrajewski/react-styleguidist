@@ -40,9 +40,6 @@ export function PlaygroundRenderer({
 				<div className={classes.tabs}>
 					{tabButtons}
 				</div>
-				<div className={classes.toolbar}>
-					{toolbar}
-				</div>
 			</div>
 			<div className={classes.tab}>
 				{tabBody}
