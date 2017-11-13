@@ -40,7 +40,6 @@ export const styles = ({ color }) => ({
 export function LinkRenderer({ classes, section, children, ...props }) {
 	const location = window.location.href.split('#')[1];
 	const slug = props.href.split('#')[1];
-	console.log(props)
 	const retVal = <a {...props} className={cx(slug === location? section? classes.onNow: "" : classes.link ,  classes.link , props.className, classes.itemHover)}> {children} </a>
 	return (
 		retVal
