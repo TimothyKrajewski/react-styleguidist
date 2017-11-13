@@ -105,7 +105,7 @@ module.exports = {
 		},
 		{
 			id: 'exampleBut',
-			name: 'Button6',
+			name: 'Button60',
 			//components:  dir + '/components/Button/**/[A-Z]*.js',
 			sections: [
 				{
