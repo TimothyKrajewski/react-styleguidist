@@ -13,6 +13,7 @@ export const styles = ({ space, fontFamily, fontSize, color }) => ({
 	},
 	copyButton: {
 		marginLeft: space[0],
+		border: "medium none currentColor"
 	},
 });
 
