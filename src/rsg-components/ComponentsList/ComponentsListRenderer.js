@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Link from 'rsg-components/Link';
 import Styled from 'rsg-components/Styled';
+import { goToAnchor } from 'react-scrollable-anchor';
 
 const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
 	list: {
@@ -66,7 +67,7 @@ export function ComponentsListRenderer({ classes, items }) {
 						const sectionList = (
 						<ul key={section.name} className={cx(classes.section, (!item.content) && classes.isChild)} >
 							<li>
-								<Link className={cx(item.slug === location? item.heading && classes.heading : item.heading && classes.heading && classes.onNow)} href={`#${item.slug}`}>
+								<Link className={cx(item.slug === location? item.heading && classes.heading : item.heading && classes.heading && classes.onNow)} href={`${window.location.href.split('#')[0]}#${item.slug}--${section.slug}`}>
 									{section.name}
 								</Link>
 							</li>

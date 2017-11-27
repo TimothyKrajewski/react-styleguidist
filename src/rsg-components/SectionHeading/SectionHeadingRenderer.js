@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Styled from 'rsg-components/Styled';
 
+import ScrollableAnchor from 'react-scrollable-anchor';
+import { configureAnchors } from 'react-scrollable-anchor';
+
+
+
 export function SectionHeadingRenderer({
 	classes,
 	children,
@@ -12,16 +17,26 @@ export function SectionHeadingRenderer({
 	primary,
 	deprecated,
 }) {
+	configureAnchors({offset: -74, scrollDuration: 200, keepLastAnchorHash: true })
 	const Tag = primary ? 'h1' : 'h2';
 	const headingClasses = cx(classes.heading, {
 		[classes.isPrimary]: primary,
 		[classes.isDeprecated]: deprecated,
 	});
+	let tag =  window.location.href.split('/')[window.location.href.split('/').length-1].split('--')[0];
+	if(tag.substring(1, tag.length) !== id)
+	{
+		tag = tag + "--" + id;
+	}
+	tag = tag.substring(1, tag.length);
+
 	return (
-		<Tag id={id} className={classes.root}>
+		<Tag className={classes.root}>
+		 <ScrollableAnchor id={`${tag}`}>
 			<a href={href} className={headingClasses}>
 				{children}
 			</a>
+			</ScrollableAnchor>
 		</Tag>
 	);
 }

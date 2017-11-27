@@ -47,13 +47,17 @@ export default class StyleGuide extends Component {
 		//console.log(this.props.config);
 		const { config, sections, welcomeScreen, patterns, nav, isolatedComponent } = this.props;
 
+
 		if (welcomeScreen) {
 			return <Welcome patterns={patterns} />;
 		}
 
 		let sectionsToRender = sections.map((page) =>{
-
-			if(document.location.hash.substr(1, document.location.hash.length-1) === page.slug){
+			console.log()
+			let sectionSlug = page.sections.map((section) => {
+				return section.slug;
+			})
+			if(document.location.hash.substr(1, document.location.hash.length-1).split('--')[0] === page.slug){
 				let arr = [page]
 				return sectionsToRender = <Sections key={document.location.hash} sections={arr} root />;
 			}

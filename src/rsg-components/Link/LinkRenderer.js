@@ -37,9 +37,14 @@ export const styles = ({ color }) => ({
 	}
 });
 
-export function LinkRenderer({ classes, section, children, ...props }) {
-	const location = window.location.href.split('#')[1];
-	const slug = props.href.split('#')[1];
+export function LinkRenderer({ classes, section, children, onclick, ...props }) {
+	let slug = props.href;
+	let location;
+	if(window.location.href.split('#')[1] !== undefined)
+	{
+		location = window.location.href.split('#')[1].split('--')[0];
+		slug = props.href.split('#')[1].split('--')[0];
+	}
 	const retVal = <a {...props} className={cx(slug === location? section? classes.onNow: "" : classes.link ,  classes.link , props.className, classes.itemHover)}> {children} </a>
 	return (
 		retVal
@@ -50,7 +55,8 @@ LinkRenderer.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
 	section: PropTypes.bool,
-	classes: PropTypes.object.isRequired
+	classes: PropTypes.object.isRequired,
+	onclick: PropTypes.string
 };
 
 export default Styled(styles)(LinkRenderer);
