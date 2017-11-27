@@ -34,18 +34,23 @@ export const styles = ({ color }) => ({
 			textOverflow: 'ellipsis',
 			backgroundColor:'#e2e2e2'
 		}
+	},
+	onNowSection:{
+		color: '#cf0a2c!important'
 	}
 });
 
 export function LinkRenderer({ classes, section, children, onclick, ...props }) {
 	let slug = props.href;
 	let location;
+	let flag = false;
 	if(window.location.href.split('#')[1] !== undefined)
 	{
-		location = window.location.href.split('#')[1].split('--')[0];
-		slug = props.href.split('#')[1].split('--')[0];
+		location = window.location.href.split('#')[1].split('--');
+		slug = props.href.split('#')[1].split('--');
+		flag = true;
 	}
-	const retVal = <a {...props} className={cx(slug === location? section? classes.onNow: "" : classes.link ,  classes.link , props.className, classes.itemHover)}> {children} </a>
+	const retVal = <a {...props} className={cx( flag? slug[0] === location[0]? section? classes.onNow: "" : classes.link : "" , slug.length === 2? slug[1] === location[1]? classes.onNowSection: "" :""  ,classes.link , props.className, classes.itemHover)}> {children} </a>
 	return (
 		retVal
 	);

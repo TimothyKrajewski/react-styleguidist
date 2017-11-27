@@ -53,7 +53,6 @@ export default class StyleGuide extends Component {
 		}
 
 		let sectionsToRender = sections.map((page) =>{
-			console.log()
 			let sectionSlug = page.sections.map((section) => {
 				return section.slug;
 			})
